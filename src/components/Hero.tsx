@@ -125,7 +125,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Formula bar */}
+            
             <div className="flex items-center gap-1.5 px-2 py-0.5 border-b border-gray-200">
               <div className="flex items-center gap-0.5 text-[10px] font-mono bg-gray-100 px-1.5 py-0.5 rounded">
                 <span>I8</span>
