@@ -73,7 +73,7 @@ const Hero = () => {
                 <span className="font-medium text-sm text-gray-800">Mango</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <button className="bg-orange-500 text-white px-3 py-0.5 rounded-md text-xs font-medium">
+                <button className="bg-gradient-to-r from-orange-400 to-yellow-400 hover:from-orange-500 hover:to-yellow-500 text-white px-3 py-0.5 rounded-md text-xs font-medium">
                   Enrich
                 </button>
                 <button className="border border-gray-300 bg-gray-50 px-3 py-0.5 rounded-md text-xs font-medium flex items-center gap-1">
