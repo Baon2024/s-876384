@@ -61,88 +61,88 @@ const Hero = () => {
           Book a demo
         </button>
 
-        <div className="max-w-[1100px] mx-auto border border-gray-200 rounded-xl shadow-xl overflow-hidden bg-white">
+        <div className="max-w-[900px] mx-auto border border-gray-200 rounded-xl shadow-xl overflow-hidden bg-white scale-90 transform origin-top">
           {/* Spreadsheet App UI */}
           <div className="flex flex-col">
             {/* Header with logo and buttons */}
-            <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 flex items-center justify-center">
-                  <span className="text-orange-500 text-xl">🥭</span>
+            <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-200">
+              <div className="flex items-center gap-1.5">
+                <div className="w-5 h-5 flex items-center justify-center">
+                  <span className="text-orange-500 text-lg">🥭</span>
                 </div>
-                <span className="font-medium text-gray-800">Mango</span>
+                <span className="font-medium text-sm text-gray-800">Mango</span>
               </div>
-              <div className="flex items-center gap-2">
-                <button className="bg-orange-500 text-white px-4 py-1 rounded-md text-sm font-medium">
+              <div className="flex items-center gap-1.5">
+                <button className="bg-orange-500 text-white px-3 py-0.5 rounded-md text-xs font-medium">
                   Enrich
                 </button>
-                <button className="border border-gray-300 bg-gray-50 px-4 py-1 rounded-md text-sm font-medium flex items-center gap-1">
+                <button className="border border-gray-300 bg-gray-50 px-3 py-0.5 rounded-md text-xs font-medium flex items-center gap-1">
                   <span>History</span>
                 </button>
               </div>
             </div>
 
             {/* Toolbar */}
-            <div className="flex items-center gap-2 px-2 py-1 border-b border-gray-200 bg-gray-50">
-              <div className="flex items-center gap-1">
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <Undo size={16} />
+            <div className="flex items-center gap-1.5 px-2 py-0.5 border-b border-gray-200 bg-gray-50">
+              <div className="flex items-center gap-0.5">
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <Undo size={14} />
                 </button>
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <Redo size={16} />
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <Redo size={14} />
                 </button>
               </div>
-              <div className="h-4 border-r border-gray-300"></div>
-              <select className="text-xs border border-gray-300 rounded px-1">
+              <div className="h-3.5 border-r border-gray-300"></div>
+              <select className="text-[10px] border border-gray-300 rounded px-1 py-0">
                 <option>Times New Roman</option>
               </select>
-              <select className="text-xs border border-gray-300 rounded px-1 w-10">
+              <select className="text-[10px] border border-gray-300 rounded px-1 py-0 w-8">
                 <option>10</option>
               </select>
-              <div className="h-4 border-r border-gray-300"></div>
-              <div className="flex items-center gap-1">
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <Bold size={16} />
+              <div className="h-3.5 border-r border-gray-300"></div>
+              <div className="flex items-center gap-0.5">
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <Bold size={14} />
                 </button>
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <Italic size={16} />
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <Italic size={14} />
                 </button>
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <Underline size={16} />
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <Underline size={14} />
                 </button>
               </div>
-              <div className="h-4 border-r border-gray-300"></div>
-              <div className="flex items-center gap-1">
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <AlignLeft size={16} />
+              <div className="h-3.5 border-r border-gray-300"></div>
+              <div className="flex items-center gap-0.5">
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <AlignLeft size={14} />
                 </button>
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <AlignCenter size={16} />
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <AlignCenter size={14} />
                 </button>
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <AlignRight size={16} />
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <AlignRight size={14} />
                 </button>
               </div>
             </div>
 
             {/* Formula bar */}
-            <div className="flex items-center gap-2 px-2 py-1 border-b border-gray-200">
-              <div className="flex items-center gap-1 text-xs font-mono bg-gray-100 px-2 py-1 rounded">
+            <div className="flex items-center gap-1.5 px-2 py-0.5 border-b border-gray-200">
+              <div className="flex items-center gap-0.5 text-[10px] font-mono bg-gray-100 px-1.5 py-0.5 rounded">
                 <span>I8</span>
               </div>
-              <div className="flex items-center gap-1 text-xs font-mono bg-gray-100 px-2 py-1 rounded">
+              <div className="flex items-center gap-0.5 text-[10px] font-mono bg-gray-100 px-1.5 py-0.5 rounded">
                 <span>fx</span>
               </div>
             </div>
 
             {/* Spreadsheet Grid */}
-            <div className="overflow-auto max-h-[500px]">
+            <div className="overflow-auto max-h-[350px]">
               <table className="border-collapse w-full">
                 <thead>
                   <tr>
-                    <th className="w-10 h-8 bg-gray-100 border border-gray-300 sticky top-0 left-0 z-20"></th>
+                    <th className="w-8 h-6 bg-gray-100 border border-gray-300 sticky top-0 left-0 z-20"></th>
                     {columnHeaders.map((header) => (
-                      <th key={header} className="w-20 min-w-20 h-8 bg-gray-100 border border-gray-300 text-sm text-center font-normal sticky top-0 z-10">
+                      <th key={header} className="w-16 min-w-16 h-6 bg-gray-100 border border-gray-300 text-xs text-center font-normal sticky top-0 z-10">
                         {header}
                       </th>
                     ))}
@@ -151,7 +151,7 @@ const Hero = () => {
                 <tbody>
                   {rowNumbers.map((rowNum) => (
                     <tr key={rowNum}>
-                      <td className="w-10 bg-gray-100 border border-gray-300 text-sm text-center font-normal sticky left-0 z-10">
+                      <td className="w-8 bg-gray-100 border border-gray-300 text-xs text-center font-normal sticky left-0 z-10">
                         {rowNum}
                       </td>
                       {columnHeaders.map((colHeader) => {
@@ -159,7 +159,7 @@ const Hero = () => {
                         return (
                           <td 
                             key={`${rowNum}-${colHeader}`} 
-                            className={`w-20 min-w-20 h-6 border border-gray-200 ${
+                            className={`w-16 min-w-16 h-5 border border-gray-200 ${
                               isHighlighted ? 'bg-blue-100' : ''
                             }`}
                           ></td>
@@ -172,25 +172,25 @@ const Hero = () => {
             </div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between px-4 py-2 border-t border-gray-200 bg-gray-50 text-xs">
-              <div className="flex items-center gap-2">
-                <button className="p-1 rounded hover:bg-gray-200">
-                  <Plus size={14} />
+            <div className="flex items-center justify-between px-3 py-1 border-t border-gray-200 bg-gray-50 text-[10px]">
+              <div className="flex items-center gap-1.5">
+                <button className="p-0.5 rounded hover:bg-gray-200">
+                  <Plus size={12} />
                 </button>
-                <div className="flex items-center gap-1">
-                  <button className="px-2 py-1 bg-gray-200 rounded-l hover:bg-gray-300">Sheet1</button>
-                  <button className="px-2 py-1 bg-gray-100 rounded-r hover:bg-gray-200">Sheet2</button>
+                <div className="flex items-center gap-0.5">
+                  <button className="px-1.5 py-0.5 bg-gray-200 rounded-l hover:bg-gray-300">Sheet1</button>
+                  <button className="px-1.5 py-0.5 bg-gray-100 rounded-r hover:bg-gray-200">Sheet2</button>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <button className="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded hover:bg-gray-200">
+              <div className="flex items-center gap-1.5">
+                <button className="flex items-center gap-0.5 px-1.5 py-0.5 bg-gray-100 rounded hover:bg-gray-200">
                   <span>Spreadsheet Context</span>
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M18 15l-6-6-6 6" />
                   </svg>
                 </button>
-                <div className="text-red-500 flex items-center gap-1">
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <div className="text-red-500 flex items-center gap-0.5">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                   <span>Failed to initiate any calls</span>
