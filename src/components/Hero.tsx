@@ -2,9 +2,29 @@
 import { Button } from "./ui/button";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "./ui/table";
 import { Input } from "./ui/input";
-import { Search, FileSpreadsheet, ChevronLeft, ChevronRight } from "lucide-react";
+import { 
+  Search, 
+  FileSpreadsheet, 
+  ChevronLeft, 
+  ChevronRight, 
+  Undo, 
+  Redo, 
+  Bold, 
+  Italic, 
+  Underline,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  Plus
+} from "lucide-react";
 
 const Hero = () => {
+  // Generate column headers A through Z
+  const columnHeaders = Array.from({ length: 20 }, (_, i) => String.fromCharCode(65 + i));
+  
+  // Generate row numbers 1 through 30
+  const rowNumbers = Array.from({ length: 30 }, (_, i) => i + 1);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center pt-24">
       {/* Background pattern */}
@@ -41,98 +61,142 @@ const Hero = () => {
           Book a demo
         </button>
 
-        <div className="max-w-[900px] mx-auto border-4 border-gray-200 rounded-xl shadow-xl overflow-hidden bg-white">
-          {/* Dashboard Preview */}
-          <div className="p-6 flex flex-col gap-6">
-            {/* Header */}
-            <div className="flex flex-col items-center gap-2">
-              <div className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                SPREADSHEET VIEWER
-              </div>
-              <h2 className="text-3xl font-bold">Mango Spreadsheet Viewer</h2>
-              <p className="text-gray-600 max-w-[600px] text-center">
-                Upload your Google Spreadsheet or Excel file and view it instantly. No data is sent to servers — everything is processed locally in your browser.
-              </p>
-            </div>
-
-            {/* File Upload Indicator */}
-            <div className="flex items-center justify-between border border-gray-200 rounded-lg p-3 bg-gray-50">
+        <div className="max-w-[1100px] mx-auto border border-gray-200 rounded-xl shadow-xl overflow-hidden bg-white">
+          {/* Spreadsheet App UI */}
+          <div className="flex flex-col">
+            {/* Header with logo and buttons */}
+            <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
               <div className="flex items-center gap-2">
-                <FileSpreadsheet className="text-blue-500" size={20} />
-                <span className="text-gray-700">sample data for hackathon.xlsx</span>
+                <div className="w-6 h-6 flex items-center justify-center">
+                  <span className="text-orange-500 text-xl">🥭</span>
+                </div>
+                <span className="font-medium text-gray-800">Mango</span>
               </div>
-              <button className="text-gray-500 hover:text-gray-700">
-                &times;
-              </button>
+              <div className="flex items-center gap-2">
+                <button className="bg-orange-500 text-white px-4 py-1 rounded-md text-sm font-medium">
+                  Enrich
+                </button>
+                <button className="border border-gray-300 bg-gray-50 px-4 py-1 rounded-md text-sm font-medium flex items-center gap-1">
+                  <span>History</span>
+                </button>
+              </div>
             </div>
 
-            {/* Search Bar */}
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-              <Input 
-                className="pl-10 bg-gray-50 border-gray-200" 
-                placeholder="Search spreadsheet..." 
-              />
+            {/* Toolbar */}
+            <div className="flex items-center gap-2 px-2 py-1 border-b border-gray-200 bg-gray-50">
+              <div className="flex items-center gap-1">
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <Undo size={16} />
+                </button>
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <Redo size={16} />
+                </button>
+              </div>
+              <div className="h-4 border-r border-gray-300"></div>
+              <select className="text-xs border border-gray-300 rounded px-1">
+                <option>Times New Roman</option>
+              </select>
+              <select className="text-xs border border-gray-300 rounded px-1 w-10">
+                <option>10</option>
+              </select>
+              <div className="h-4 border-r border-gray-300"></div>
+              <div className="flex items-center gap-1">
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <Bold size={16} />
+                </button>
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <Italic size={16} />
+                </button>
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <Underline size={16} />
+                </button>
+              </div>
+              <div className="h-4 border-r border-gray-300"></div>
+              <div className="flex items-center gap-1">
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <AlignLeft size={16} />
+                </button>
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <AlignCenter size={16} />
+                </button>
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <AlignRight size={16} />
+                </button>
+              </div>
             </div>
 
-            {/* Spreadsheet Table */}
-            <div className="border border-gray-200 rounded-lg overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow className="bg-gray-50">
-                    <TableHead className="w-[80px] font-medium">ID</TableHead>
-                    <TableHead className="font-medium">input field 1</TableHead>
-                    <TableHead className="font-medium">input field 2</TableHead>
-                    <TableHead className="font-medium">input field 3</TableHead>
-                    <TableHead className="w-[120px]"></TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {[1, 2, 3, 4, 5, 6].map((row) => (
-                    <TableRow key={row}>
-                      <TableCell className="bg-gray-50 font-medium">{row}</TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell>
-                        <Button size="sm" className="w-full bg-blue-500 hover:bg-blue-600">
-                          Get Data
-                        </Button>
-                      </TableCell>
-                    </TableRow>
+            {/* Formula bar */}
+            <div className="flex items-center gap-2 px-2 py-1 border-b border-gray-200">
+              <div className="flex items-center gap-1 text-xs font-mono bg-gray-100 px-2 py-1 rounded">
+                <span>I8</span>
+              </div>
+              <div className="flex items-center gap-1 text-xs font-mono bg-gray-100 px-2 py-1 rounded">
+                <span>fx</span>
+              </div>
+            </div>
+
+            {/* Spreadsheet Grid */}
+            <div className="overflow-auto max-h-[500px]">
+              <table className="border-collapse w-full">
+                <thead>
+                  <tr>
+                    <th className="w-10 h-8 bg-gray-100 border border-gray-300 sticky top-0 left-0 z-20"></th>
+                    {columnHeaders.map((header) => (
+                      <th key={header} className="w-20 min-w-20 h-8 bg-gray-100 border border-gray-300 text-sm text-center font-normal sticky top-0 z-10">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {rowNumbers.map((rowNum) => (
+                    <tr key={rowNum}>
+                      <td className="w-10 bg-gray-100 border border-gray-300 text-sm text-center font-normal sticky left-0 z-10">
+                        {rowNum}
+                      </td>
+                      {columnHeaders.map((colHeader) => {
+                        const isHighlighted = (rowNum === 8 && colHeader === 'I');
+                        return (
+                          <td 
+                            key={`${rowNum}-${colHeader}`} 
+                            className={`w-20 min-w-20 h-6 border border-gray-200 ${
+                              isHighlighted ? 'bg-blue-100' : ''
+                            }`}
+                          ></td>
+                        );
+                      })}
+                    </tr>
                   ))}
-                </TableBody>
-              </Table>
-            </div>
-
-            {/* Pagination */}
-            <div className="flex items-center justify-between text-sm">
-              <div className="text-gray-600">
-                Showing 1-6 of 6 rows
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-600">10 rows</span>
-                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-                <div className="flex items-center gap-2">
-                  <button className="p-1 rounded-md hover:bg-gray-100">
-                    <ChevronLeft size={16} />
-                  </button>
-                  <span className="text-gray-600">1 / 1</span>
-                  <button className="p-1 rounded-md hover:bg-gray-100">
-                    <ChevronRight size={16} />
-                  </button>
-                </div>
-              </div>
+                </tbody>
+              </table>
             </div>
 
             {/* Footer */}
-            <p className="text-gray-500 text-center text-sm mt-2">
-              A beautifully designed spreadsheet viewer. Upload your file to get started.
-            </p>
+            <div className="flex items-center justify-between px-4 py-2 border-t border-gray-200 bg-gray-50 text-xs">
+              <div className="flex items-center gap-2">
+                <button className="p-1 rounded hover:bg-gray-200">
+                  <Plus size={14} />
+                </button>
+                <div className="flex items-center gap-1">
+                  <button className="px-2 py-1 bg-gray-200 rounded-l hover:bg-gray-300">Sheet1</button>
+                  <button className="px-2 py-1 bg-gray-100 rounded-r hover:bg-gray-200">Sheet2</button>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button className="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded hover:bg-gray-200">
+                  <span>Spreadsheet Context</span>
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M18 15l-6-6-6 6" />
+                  </svg>
+                </button>
+                <div className="text-red-500 flex items-center gap-1">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span>Failed to initiate any calls</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
